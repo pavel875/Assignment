@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: blue; */
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.main-class {
+    display: flex;
+}
+
+.side-menu {
+    background-color: orangered;
+    color: aliceblue;
+    height: 100vh;
+    width: 350px !important;
+    padding: 10px;
+    position: fixed;
+
+}
+
+
+.company-name {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+}
+
+.menu-itmes {
+    margin-top: 60px;
+}
+
+.menu-itmes a {
+    text-decoration: none;
+    color: aliceblue;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid white; */
+    margin: 0 10px;
+    padding: 10px;
+    padding-left: 25px;
+    font-size: 1.5rem;
+}
+
+.menu-itmes a:hover {
+    background-color: aliceblue;
+    color: black;
+}
+
+.section-heading {
+    font-size: 3.9rem;
+    font-weight: 400;
+    margin-top: 100px;
+}
+
+.section-name {
+    font-size: 3rem;
+    color: orangered;
+    font-weight: 400;
+}
+
+.first-section {
+    margin: 0 55px;
+    margin-left: 400px;
+}
+
+hr {
+    width: 55px;
+    height: 10px;
+    background-color: orangered;
+    border-radius: 6px;
+}

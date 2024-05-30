@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.side-menu {
+    background-color: orangered;
+    color: aliceblue;
+    height: 100vh;
+    width: 350px !important;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+
+}
+
+
+.company-name {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+}
+
+/* .menu-itmes {
+    margin-top: 60px;
+} */
+
+/* .menu-itmes a {
+    text-decoration: none;
+    color: aliceblue;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    padding: 10px;
+    padding-left: 25px;
+    font-size: 1.5rem;
+} */
+.menu-itmes a {
+    color: white;
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 20px;
+    transition: all 0.5s ease;
+    display: block;
+    /* margin-bottom: 10px; */
+    text-decoration: none;
+}
+
+/* .menu-itmes a:hover {
+    background-color: aliceblue;
+    color: black;
+    font-size: 2rem;
+    border-radius: 10px;
+} */
+.menu-itmes a:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.menu-itmes a:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+.section-heading {
+    font-size: 3.9rem;
+    font-weight: 700;
+    margin-top: 100px;
+}
+
+.section-name {
+    font-size: 3rem;
+    color: orangered;
+    font-weight: 400;
+}
+
+.first-section {
+    margin: 0 55px;
+    margin-left: 400px;
+
+}
+
+.hr {
+    width: 55px;
+    height: 14px;
+    background-color: orangered;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+
+/* Immage css */
+
+.container {
+    margin-top: 20px;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-rows: 300px 300px 300px;
+    margin-bottom: 60px;
+
+}
+
+.image img {
+    width: 100%;
+    background-size: cover;
+    /* margin-bottom: 15px !important; */
+    height: 300px;
+}
+
+.texts {
+    font-weight: 100;
+}
+
+.service-section {
+    margin-bottom: 70px;
+}
+
+.designer-details {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-rows: 460px;
+    margin-bottom: 60px;
+    
+}
+
+.designers {
+    background-color: rgb(222, 225, 225);
+    word-wrap: break-word;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.designers h2 {
+    font-weight: 100;
+}
+
+.designation {
+    font-weight: 100;
+    color: rgb(136, 137, 137);
+}
+
+.designers img {
+    height: 240px;
+    width: 100%;
+    filter: grayscale(70%);
+}
+
+.detils {
+    margin: 15px;
+}
+
+.packages {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-rows: 560px;
+    margin-bottom: 60px;
+}
+
+.packages1,
+.packages2 {
+    background-color: rgb(225, 228, 228);
+
+
+}
+
+.basic {
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    background-color: rgb(88, 88, 88);
+    color: aliceblue;
+    font-size: 25px;
+    font-weight: 100;
+}
+
+.pro {
+    background-color: orangered !important;
+}
+
+.features {
+    text-align: center;
+    padding: 15px;
+    font-weight: 100;
+}
+
+.features h1 {
+    font-weight: 100;
+}
+
+.features span {
+    cursor: pointer;
+}
+
+.signup-btn {
+    background-color: white;
+    color: black;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+}
+
+.signup-btn:hover {
+    background-color: rgb(34, 34, 34);
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.orenge-btn {
+    background-color: orangered;
+    color: aliceblue;
+}
+
+.orenge-btn:hover {
+    background-color: rgb(34, 34, 34);
+    color: aliceblue;
+}
+
+.btn {
+    /* justify-content: center;
+    align-items: center; */
+    text-align: center;
+    margin-top: 25px;
+    align-items: center;
+
+}
+
+/* .form input{
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 10px;
+} */
+.sent-btn {
+    width: 100%;
+    background-color: orangered;
+    color: aliceblue;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 70px;
+}
+
+.sent-btn:hover {
+    background-color: rgb(204, 204, 202);
+    color: black;
+}
+
+.foot {
+    width: 100%;
+    background-color: rgb(215, 216, 216);
+    height: 100px;
+}
+
+.contect-section input {
+    border: 2px solid transparent;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.contect-section input:hover,
+.contect-section input:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+}
