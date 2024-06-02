@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Designer Site</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://f...content-available-to-author-only...s.com">
+    <link rel="preconnect" href="https://f...content-available-to-author-only...c.com" crossorigin>
+    <link href="https://f...content-available-to-author-only...s.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <!-- <script src="./JS/script.js"></script> -->
 </head>
@@ -115,48 +115,47 @@
                 <p class="texts">Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                     ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p><br>
-                <div class="packages">
-                    <div class="packages1">
-                        <div class="basic">Basic</div>
-                        <div class="features">Floorplanning</div>
-                        <hr>
-                        <div class="features">10 hours support</div>
-                        <hr>
-                        <div class="features">Photography</div>
-                        <hr>
-                        <div class="features">20% furniture discount</div>
-                        <hr>
-                        <div class="features">Good deals
-                        </div>
-                        <hr>
-                        <div class="features">
-                            <h1><span class="minus">-</span> $<span class="price">199</span><span class="plus">+</span>
-                            </h1>
-                            <span class="quantity">1</span> room
-                        </div>
-                        <hr>
-                        <div class="btn"><button class="signup-btn">Sign UP</button></div>
+                <div class="packages1">
+                    <div class="basic">Basic</div>
+                    <div class="features">Floorplanning</div>
+                    <hr>
+                    <div class="features">10 hours support</div>
+                    <hr>
+                    <div class="features">Photography</div>
+                    <hr>
+                    <div class="features">20% furniture discount</div>
+                    <hr>
+                    <div class="features">Good deals</div>
+                    <hr>
+                    <div class="features">
+                        <h1><span class="minus" data-type="basic">-</span> $<span
+                                class="price basic-price">199</span><span class="plus" data-type="basic">+</span></h1>
+                        <span class="quantity basic-quantity">1</span> room
                     </div>
-                    <div class="packages2">
-                        <div class="basic pro">Pro</div>
-                        <div class="features">Floorplanning</div>
-                        <hr>
-                        <div class="features">50 hours support</div>
-                        <hr>
-                        <div class="features">Photography</div>
-                        <hr>
-                        <div class="features">50% furniture discount</div>
-                        <hr>
-                        <div class="features">GREAT deals</div>
-                        <hr>
-                        <div class="features">
-                            <h1><span class="minus">-</span> $<span class="price">299</span> <span class="plus">+</span></h1>
-                           <span class="quantity">1</span>  room
-                        </div>
-                        <hr>
-                        <div class="btn"><button class="signup-btn orenge-btn">Sign UP</button></div>
-                    </div>
+                    <hr>
+                    <div class="btn"><button class="signup-btn">Sign UP</button></div>
                 </div>
+                <div class="packages2">
+                    <div class="basic pro">Pro</div>
+                    <div class="features">Floorplanning</div>
+                    <hr>
+                    <div class="features">50 hours support</div>
+                    <hr>
+                    <div class="features">Photography</div>
+                    <hr>
+                    <div class="features">50% furniture discount</div>
+                    <hr>
+                    <div class="features">GREAT deals</div>
+                    <hr>
+                    <div class="features">
+                        <h1><span class="minus" data-type="pro">-</span> $<span class="price pro-price">299</span><span
+                                class="plus" data-type="pro">+</span></h1>
+                        <span class="quantity pro-quantity">1</span> room
+                    </div>
+                    <hr>
+                    <div class="btn"><button class="signup-btn orenge-btn">Sign UP</button></div>
+                </div>
+
             </div>
             <div class="contect-section" id="Contect">
                 <h1 class="section-name">Contact.
@@ -182,92 +181,56 @@
     <footer class="foot">
     </footer>
     <script>
+
+        function updateQuantityAndPrice(type, change) {
+            let quantityElement = document.querySelector(`.${type}-quantity`);
+            let priceElement = document.querySelector(`.${type}-price`);
+
+            let quantity = parseInt(quantityElement.textContent);
+            let price = parseInt(priceElement.textContent);
+
+            if (isNaN(quantity) || isNaN(price) || quantity <= 0) {
+                return;
+            }
+
+            let initialPricePerItem = price / quantity;
+
+            let newQuantity = quantity + change;
+
+            // Ensure quantity does not go below 1
+            if (newQuantity < 1) {
+                return;
+            }
+
+            // Calculate the new price
+            let newPrice = initialPricePerItem * newQuantity;
+
+            // Ensure price does not go below 199
+            if (newPrice < 199) {
+                return;
+            }
+
+            // Update the elements with the new values
+            quantityElement.textContent = newQuantity;
+            priceElement.textContent = newPrice.toFixed(0); // Ensure price is formatted to 2 decimal places if needed
+        }
+
         // Function to handle the click event for incrementing quantity
-document.querySelector('.plus').addEventListener('click', function () {
-    updateQuantityAndPrice(1);
-});
+        document.querySelectorAll('.plus').forEach(button => {
+            button.addEventListener('click', function () {
+                let type = this.getAttribute('data-type');
+                updateQuantityAndPrice(type, 1);
+            });
+        });
 
-// Function to handle the click event for decrementing quantity
-document.querySelector('.minus').addEventListener('click', function () {
-    updateQuantityAndPrice(-1);
-});
+        // Function to handle the click event for decrementing quantity
+        document.querySelectorAll('.minus').forEach(button => {
+            button.addEventListener('click', function () {
+                let type = this.getAttribute('data-type');
+                updateQuantityAndPrice(type, -1);
+            });
+        });
 
-// Function to update quantity and price
-function updateQuantityAndPrice(change) {
-    // Get current quantity and price elements
-    let quantityElement = document.querySelector('.quantity');
-    let priceElement = document.querySelector('.price');
-
-    // Get the current values of quantity and price
-    let quantity = parseInt(quantityElement.textContent);
-    let price = parseInt(priceElement.textContent);
-
-    // Check if the parsed values are valid numbers
-    if (isNaN(quantity) || isNaN(price) || quantity <= 0) {
-        return;
-    }
-
-    // Calculate the initial price per item based on the current price and quantity
-    let initialPricePerItem = price / quantity;
-
-    // Update the quantity based on the change (increase or decrease)
-    let newQuantity = quantity + change;
-
-    // Ensure quantity does not go below 1
-    if (newQuantity < 1) {
-        return;
-    }
-
-    // Calculate the new price
-    let newPrice = initialPricePerItem * newQuantity;
-
-    // Ensure price does not go below 199
-    if (newPrice < 199) {
-        return;
-    }
-
-    // Update the elements with the new values
-    quantityElement.textContent = newQuantity;
-    priceElement.textContent = newPrice.toFixed(0); // Ensure price is formatted to 2 decimal places if needed
-}
-
-function updateQuantityAndPrice(change) {
-    // Get current quantity and price elements
-    let quantityElement = document.querySelector('.quantity');
-    let priceElement = document.querySelector('.price');
-
-    // Get the current values of quantity and price
-    let quantity = parseInt(quantityElement.textContent);
-    let price = parseInt(priceElement.textContent);
-
-    // Check if the parsed values are valid numbers
-    if (isNaN(quantity) || isNaN(price) || quantity <= 0) {
-        return;
-    }
-
-    // Calculate the initial price per item based on the current price and quantity
-    let initialPricePerItem = price / quantity;
-
-    // Update the quantity based on the change (increase or decrease)
-    let newQuantity = quantity + change;
-
-    // Ensure quantity does not go below 1
-    if (newQuantity < 1) {
-        return;
-    }
-
-    // Calculate the new price
-    let newPrice = initialPricePerItem * newQuantity;
-
-    // Ensure price does not go below 199
-    if (newPrice < 199) {
-        return;
-    }
-
-    // Update the elements with the new values
-    quantityElement.textContent = newQuantity;
-    priceElement.textContent = newPrice.toFixed(0); // Ensure price is formatted to 2 decimal places if needed
-}
 
     </script>
 </body>
